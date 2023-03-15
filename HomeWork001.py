@@ -15,4 +15,8 @@ input()
 print('Task 4 \n ---------')
 
 num = int(input("Введите число: "))
-print(f"{num/6}  {num/6*4}  {num/6}")
+print(f"Петя: {int(num/6)}  Катя: {int(num/6*4)}  Сережа: {int(num/6)}")
+
+# ---------------------------------
+
+print('Task 6 \n ---------')
