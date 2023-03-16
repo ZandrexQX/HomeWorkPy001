@@ -15,6 +15,7 @@ input()
 print('Task 4 \n ---------')
 
 num = int(input("Введите число журавликов: "))
+while num%6 != 0: num = int(input("Введите число журавликов: "))
 print(f"Петя: {int(num/6)}  Катя: {int(num/6*4)}  Сережа: {int(num/6)}")
 
 input()
