@@ -21,22 +21,40 @@ from random import randint as r
 
 # # ---------------------------------
 
-print('Task 12 \n ---------')
+# print('Task 12 \n ---------')
 
-a = r(0,1000)
-b = r(0,1000)
+# a = r(0,1000)
+# b = r(0,1000)
 
-sum = a + b
-mult = a*b
-c = 0
+# sum = a + b
+# mult = a*b
+# c = 0
 
-while c*(sum-c) != mult:
-    c += 1
+# while c*(sum-c) != mult:
+#     c += 1
 
-d = sum - c
+# d = sum - c
 
-print(f"Петя загадал: {a} и {b}")
-print(f"Катя отгадала: {c} и {d}")
+# print(f"Петя загадал: {a} и {b}")
+# print(f"Катя отгадала: {c} и {d}")
+
+# input()
+
+# # ---------------------------------
+
+print('Task 14 \n ---------')
+
+n = int(input("Введите число N: "))
+
+count = 0
+result = 1
+
+while (result < n) and result != n:
+     result *= 2
+     count += 1
+     if result <= n: 
+        print(f"2 в степени {count} равна: {result}")   # Развернутый ответ
+        # print(result)                                 # Просто вывод результата
 
 input()
 
