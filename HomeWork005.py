@@ -25,7 +25,7 @@
 # print(f"Сумма {a} и {b} равна: {sum(a, b)}")
 
 # # ---------------------------------
-print('Task Add \n ---------')
+print('Task Add 1\n ---------')
 def func():
    list_num = list()
    a = int(input("Введите число: "))
