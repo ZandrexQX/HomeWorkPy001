@@ -18,31 +18,30 @@ else: print("Пам парам")
 
 print('Task 36 \n ---------')
 
-n = int(input("Введите количество: "))
+n = int(input("Введите строки: "))
+m = int(input("Введите солбцы: "))
 
-list_0 = [[0] * n for _ in range(n)]
-
-for i in range(n):
-   list_0[i][0] = i+1
-   list_0[0][i] = i+1
-   if i>0:
-       for j in range(i,n):
-           list_0[i][j] = (i+1)*(j+1)
-           if i!=j: list_0[j][i] = (i+1)*(j+1)
+def matrix(n,m):
+    l = [[0] * m for _ in range(n)]
+    for i in range(n):
+        l[i][0] = i+1
+        for j in (range(m)):
+            l[0][j] = j+1
+            if i>0 and j>0:
+                for i in range(1,n):
+                    l[i][j] = (i+1)*(j+1)
+    return l
     
 
-def print_matrix(list):
-    for i in list_0:
+def print_matrix(l):
+    for i in l:
         for j in i:
             print(j, end = "\t")
         print()
 
-print_matrix(list_0)
-
+# print_matrix(matrix(n,m))
 
 def print_operation_table(f, num_rows, num_columns):
-    pass
-    
+    print_matrix(f(num_rows,num_columns))
 
-
-print_operation_table(lambda x, y: x * y, num_rows=6, num_columns=6)
+print_operation_table(lambda x, y: matrix(x,y), num_rows=n, num_columns=m)
