@@ -44,4 +44,4 @@ def print_matrix(l):
 def print_operation_table(f, num_rows, num_columns):
     print_matrix(f(num_rows,num_columns))
 
-print_operation_table(lambda x, y: matrix(x,y), num_rows=n, num_columns=m)
+print_operation_table(matrix, num_rows=n, num_columns=m)
