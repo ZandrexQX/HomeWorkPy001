@@ -1,20 +1,14 @@
 import shelve as s
 from Librare import *
+print("Телефонный справочник")
+num = input("Введите код справочника: ")
 
-add_contact(contacts)
+# add_contact(contacts)
 
 print(contacts)
 
-with s.open("phonebook") as data:
-    data["0"] = contacts
-        
-with s.open("phonebook") as data:
-    reading_list = data["0"]
-    
-print(reading_list)
+# save_phone(num)
 
-for i in reading_list:
-    print("Name: " + i[keys[0]])
-    print("Family: " + i[keys[1]])
-    print("Phone: " + i[keys[2]])
-    print()
+r = load_phone(num)
+
+print_phone(r)
