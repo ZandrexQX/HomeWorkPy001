@@ -27,15 +27,16 @@ def save_phone(num):
 def load_phone(num):
     with s.open("phonebook") as data: return data[num]
     
-def print_keys(i):
-    print("Name: " + i[keys[0]])
-    print("Family: " + i[keys[1]])
-    print("Phone: " + i[keys[2]])
+def print_keys(r, i):
+    print(f"Контакт № {i+1}")
+    print("Name: " + r[i][keys[0]])
+    print("Family: " + r[i][keys[1]])
+    print("Phone: " + r[i][keys[2]])
     print("----------------------")
 
 def print_phone(r):
-    for i in r:
-        print_keys(i)
+    for i in range(len(r)):
+        print_keys(r, i)
         
 def choice_sort():
     ch = input("Введите параметр сортировки (Имя, фамилия, телефон): ").lower()
@@ -50,9 +51,19 @@ def sort_phone(func_ch, r):
     ch = func_ch()
     n = input("Введите значение для сортировки: ")
     print(f"---------------------------\n Результат сортировки \n---------------------------")
-    for i in r:
-        if i[keys[ch]] == n:
-            print_keys(i)
+    for i in range(len(r)):
+        if r[i][keys[ch]] == n:
+            print_keys(r, i)
+
+def delete_phone(l):
+    n = input("Введите номер контакта: ")
+    while not n.isdigit():
+        n = input("Неверно! Введите номер контакта: ")
+    n = int(n)
+    l.pop(n-1)
+
+def change_phone():
+    pass
 
 def main_phone(l, num):
     flag = True
@@ -65,7 +76,7 @@ def main_phone(l, num):
         save_phone(num)
         r = load_phone(num)
     elif command == "print": print_phone(l)
-    elif command == "delete": pass
+    elif command == "delete": delete_phone(l)
     elif command == "change": pass
     elif command == "exit": flag = not flag
     if flag: main_phone(l, num)
