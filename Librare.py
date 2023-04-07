@@ -62,8 +62,15 @@ def delete_phone(l):
     n = int(n)
     l.pop(n-1)
 
-def change_phone():
-    pass
+def change_phone(l):
+    n = input("Введите номер контакта: ")
+    while not n.isdigit():
+        n = input("Неверно! Введите номер контакта: ")
+    n = int(n)
+    name = input("Введите имя: ")
+    family = input("Введите фамилию: ")
+    phone = input("Введите телефон: ")
+    l[n-1] = {keys[0]:name, keys[1]: family, keys[2]: phone}
 
 def main_phone(l, num):
     flag = True
@@ -77,7 +84,7 @@ def main_phone(l, num):
         r = load_phone(num)
     elif command == "print": print_phone(l)
     elif command == "delete": delete_phone(l)
-    elif command == "change": pass
+    elif command == "change": change_phone(l)
     elif command == "exit": flag = not flag
     if flag: main_phone(l, num)
     
